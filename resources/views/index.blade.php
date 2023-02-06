@@ -59,6 +59,23 @@
 
 </body>
 <script>
+   
+   var no_pendaftaran = <?php echo $siswa->no_pendaftaran ; ?>;
+   var indo = <?php echo $siswa->nilai_ind ; ?>;
+   var mtk = <?php echo $siswa->nilai_mtk; ?>;
+   var ipa = <?php echo $siswa->nilai_ipa; ?>;
+   var hasilIndo = indo;
+   var hasilMtk = mtk;
+   var hasilIpa = ipa;
+   
+   // var no_pendaftaran = <?php echo $siswa->no_pendaftaran ; ?>;
+   // var indo = <?php echo $siswa->nilai_ind ; ?>;
+   // var mtk = <?php echo $siswa->nilai_mtk; ?>;
+   // var ipa = <?php echo $siswa->nilai_ipa; ?>;
+   // var hasilIndo = indo+mtk+ipa;
+   // var hasilMtk =mtk+indo+ipa;
+   // var hasilIpa =ipa+mtk+indo;
+
 Highcharts.chart('chartNilai', {
     chart: {
         type: 'column'
@@ -100,7 +117,9 @@ Highcharts.chart('chartNilai', {
     },
     series: [{
         name: 'NILAI',
-        data: [49.9, 71.5, 80]
+      //   data: [69.9, 61.5, 70] 
+      data:[hasilIndo,hasilMtk,hasilIpa]  
+      
 
     }]
 });
